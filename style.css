@@ -1,0 +1,45 @@
+* { box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+body, html { margin: 0; padding: 0; background: #000; overflow-x: hidden; }
+
+/* الانترو */
+#intro-overlay { position: fixed; inset: 0; background: #000; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+#robot-img { width: 130px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.2)); }
+#robot-message { font-size: 24px; margin: 20px; color: #ffffff; font-weight: bold; text-align: center; height: 50px; }
+
+/* اللمضة */
+.lamp-fixed { position: relative; width: 100px; display: flex; flex-direction: column; align-items: center; }
+.lamp-head { width: 90px; height: 35px; background: #ddd; border-radius: 50px 50px 5px 5px; }
+.bulb { width: 50px; height: 50px; background: #222; border-radius: 50%; margin-top: -15px; }
+.bulb.on { background: #fff; box-shadow: 0 0 70px 25px white; }
+.pull-cord { width: 4px; height: 85px; background: #fff; cursor: pointer; position: relative; }
+.gold-handle { width: 18px; height: 18px; background: gold; border-radius: 50%; position: absolute; bottom: -9px; left: -7px; }
+
+/* الموقع والمنتجات */
+#main-content { padding: 20px; background: linear-gradient(135deg, #4e54c8, #8f94fb, #b382af); min-height: 100vh; }
+.shop-header { display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.3); color: white; padding: 20px; border-radius: 15px; border: 2px solid rgba(255,255,255,0.5); margin-bottom: 30px; }
+.tag { color: gold; font-size: 14px; border: 1px solid gold; padding: 3px 10px; border-radius: 10px; }
+
+.grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 40px; }
+.item-card { background: white; border-radius: 20px; padding: 15px; text-align: center; cursor: pointer; box-shadow: 0 8px 15px rgba(0,0,0,0.2); transition: 0.3s; animation: fadeIn 0.8s ease forwards; }
+.item-card:hover { transform: translateY(-8px); border: 2px solid #4e54c8; }
+.item-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 15px; margin-bottom: 10px; }
+.buy-btn { width: 100%; padding: 10px; background: #4e54c8; color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 16px; margin-top: 5px; }
+
+/* النوافذ (الفولدر والسلة) */
+.modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 10000; display: flex; justify-content: center; align-items: center; backdrop-filter: blur(5px); }
+.modal-box { background: white; padding: 20px; border-radius: 20px; width: 90%; max-width: 400px; position: relative; text-align: center; }
+
+/* زر الإغلاق الأحمر */
+.close-x-btn {
+    position: absolute; top: 10px; left: 10px; 
+    background: #ff4757; color: white; border: none; 
+    padding: 5px 15px; border-radius: 8px; cursor: pointer;
+    font-weight: bold; font-size: 14px; z-index: 10001;
+}
+
+.cart-row { display: flex; align-items: center; gap: 15px; padding: 10px; border-bottom: 1px solid #eee; }
+.cart-row img { width: 50px; height: 50px; border-radius: 8px; object-fit: cover; }
+.cart-footer input { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 15px; font-family: 'Cairo'; }
+
+.hidden { display: none !important; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }

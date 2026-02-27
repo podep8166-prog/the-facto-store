@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محلات الحاج سلمي عبدالله</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("PAYrDjmkJyORNf04Y"); 
+       })();
+    </script>
+</head>
+<body>
+
+    <div id="intro-overlay">
+        <div class="robot-container">
+            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Robot" id="robot-img">
+            <div id="robot-message"></div>
+        </div>
+        <div id="lamp-container" class="hidden">
+            <div class="lamp-fixed">
+                <div class="lamp-head"></div>
+                <div class="bulb" id="bulb-element"></div>
+                <div class="pull-cord" id="main-cord">
+                    <div class="gold-handle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content" style="display: none; opacity: 0;">
+        <header class="shop-header">
+            <div class="header-right">
+                <p>👌 {محافظة شمال سيناء . بئر العبد . شارع مجلس المدينة}</p>
+                <p>📞 01016833267 | 01016838419</p>
+            </div>
+            <div class="header-center">
+                <h1>🏗️ {محلات الحاج سلمي عبدالله لمواد البناء} 🏗️</h1>
+                <span class="tag">💳 يوجد تقسيط لجميع العملاء</span>
+            </div>
+            <div class="header-left">
+                <button id="cart-open-btn">🛒 السلة (<span id="cart-counter">0</span>)</button>
+            </div>
+        </header>
+
+        <section class="store-block">
+            <h2 class="title-line">🏠 قسم الكميات والجملة</h2>
+            <div class="grid-layout" id="main-grid"></div>
+        </section>
+
+        <section class="store-block retail-section">
+            <h2 class="title-line">🛍️ قسم التجزئة والمقاسات</h2>
+            <div class="grid-layout" id="retail-grid"></div>
+        </section>
+    </main>
+
+    <div id="details-modal" class="modal-bg hidden">
+        <div class="modal-box details-view">
+            <button id="close-details-btn" class="close-x-btn">✕ إغلاق</button>
+            <div id="product-folder-content"></div>
+        </div>
+    </div>
+
+    <div id="cart-window" class="modal-bg hidden">
+        <div class="modal-box">
+            <button id="close-cart-btn" class="close-x-btn">✕ إغلاق</button>
+            <h2>📋 قائمة مشترياتك</h2>
+            <div id="items-in-cart"></div>
+            <div class="cart-footer">
+                <p>الإجمالي: <span id="total-val">0</span> ج.م</p>
+                <input type="tel" id="client-tel" placeholder="اكتب رقم تليفونك هنا">
+                <button id="order-submit">تأكيد الحجز الآن</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
